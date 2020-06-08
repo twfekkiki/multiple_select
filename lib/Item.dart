@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class Item<V, D, C> {
   V value;
@@ -10,9 +9,9 @@ class Item<V, D, C> {
   C content;
 
   Item.build({
-    @required this.value,
-    @required this.display,
-    @required this.content,
+    this.value,
+    this.display,
+    this.content,
   });
 
   Item.fromJson(

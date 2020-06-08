@@ -29,30 +29,21 @@ class MultipleDropDownState extends State<MultipleDropDown> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: Opacity(
-              opacity: this.widget.disabled ? 0.4 : 1,
-              child: Container(
-                margin: EdgeInsets.only(right: 8),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: this._getContent(),
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 0, horizontal: 5.5),
-                      child: Icon(Icons.list, color: Colors.black54),
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 0.5, color: Colors.grey[350]))),
+      child: Opacity(
+        opacity: this.widget.disabled ? 0.4 : 1,
+        child: Card(
+          elevation: 0.7,
+          color: Colors.white,
+          margin: EdgeInsets.only(right: 8),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: this._getContent(),
               ),
-            ),
+            ],
           ),
-
-        ],
+        //  decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 0.5, color: Colors.grey[350]))),
+        ),
       ),
       onTap: () {
         if (!this.widget.disabled)
@@ -91,6 +82,10 @@ class MultipleDropDownState extends State<MultipleDropDown> {
               (element) => Padding(
                     padding: EdgeInsets.symmetric(horizontal: 1),
                     child: RawChip(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0),
+                      ),
+                      backgroundColor: Colors.white,
                       isEnabled: !this.widget.disabled,
                       label: Text(element.display),
                       onDeleted: () {
