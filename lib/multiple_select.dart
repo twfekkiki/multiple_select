@@ -156,12 +156,12 @@ class SelectorListState extends State<SelectorList> {
                               child: this.widget.values.contains(item.value)
                                   ? Icon(
                                       Icons.radio_button_checked,
-                                      color: Colors.black54,
+                                      color: Color(0xff2680EB),
                                       size: 30,
                                     )
                                   : Icon(
                                       Icons.add,
-                                      color: Colors.grey,
+                                      color: Colors.black,
                                       size: 30,
                                     ),
                             )

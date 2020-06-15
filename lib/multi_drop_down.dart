@@ -64,6 +64,7 @@ class MultipleDropDownState extends State<MultipleDropDown> {
       return Padding(
         child: Text(
           this.widget.placeholder,
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 16,
             color: Colors.black54,
@@ -87,6 +88,7 @@ class MultipleDropDownState extends State<MultipleDropDown> {
                       ),
                       backgroundColor: Colors.white,
                       isEnabled: !this.widget.disabled,
+                      elevation: 1,
                       label: Text(element.display),
                       onDeleted: () {
                         if (!this.widget.disabled) {
